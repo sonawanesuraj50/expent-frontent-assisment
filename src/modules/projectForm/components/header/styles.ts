@@ -104,6 +104,11 @@ export const UserText = styled.div`
 export const SidebarIcon = styled(MenuIcon)`
   color: #ffffff;
   margin-left: auto;
+  display: none !important;
+
+  @media (max-width: 560px) {
+    display: block !important;
+  }
 `;
 
 export const CloseSidebarIcon = styled(CloseIcon)`
