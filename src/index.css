@@ -1,13 +1,59 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* inter font weight 400 */
+
+@font-face {
+  font-family: "Manrope-Regular";
+  src: local("Manrope-Regular"),
+    url("asset/fonts/Manrope-Regular.ttf") format("truetype");
+}
+
+/* inter font weight 500 */
+
+@font-face {
+  font-family: "Manrope-Medium";
+  src: local("Manrope-Medium"),
+    url("asset/fonts/Manrope-Medium.ttf") format("truetype");
+}
+
+/* inter font weight 600 */
+
+@font-face {
+  font-family: "Manrope-SemiBold";
+  src: local("Manrope-SemiBold"),
+    url("asset/fonts/Manrope-SemiBold.ttf") format("truetype");
+}
+
+/* inter font weight 700 */
+
+@font-face {
+  font-family: "Manrope-Bold";
+  src: local("Manrope-Bold"),
+    url("asset/fonts/Manrope-Bold.ttf") format("truetype");
 }
