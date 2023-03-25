@@ -28,4 +28,6 @@ export const IMAGES = {
   approvalIcon: require("../asset/images/approval-icon.svg"),
 
   moreIcon: require("../asset/images/more-icon.svg"),
+
+  Error404: require("../asset/images/404-error.svg"),
 };

@@ -1,19 +1,44 @@
 import { useState } from "react";
-import { IMAGES } from "shared";
+import { HeaderProps, IMAGES, ProjectTabs } from "shared";
 import * as Styles from "./styles";
 
-const Header = () => {
+const Header = (props: HeaderProps) => {
+  const { currentTab, setCurrentTab } = props;
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const handleTabs = (tab: ProjectTabs) => {
+    setCurrentTab(tab);
+  };
 
   const ResponsiveSidebar = () => {
     return (
       <Styles.ResponsiveSidebarContainer active={showSidebar}>
         <Styles.CloseSidebarIcon onClick={() => setShowSidebar(!showSidebar)} />
         <Styles.ResponsiveNav>
-          <Styles.NavText active={false}>Home</Styles.NavText>
-          <Styles.NavText active={false}>DAShboard</Styles.NavText>
-          <Styles.NavText active={false}>Vendors</Styles.NavText>
-          <Styles.NavText active={true}>Projects</Styles.NavText>
+          <Styles.NavText
+            active={currentTab === ProjectTabs.Home}
+            onClick={() => handleTabs(ProjectTabs.Home)}
+          >
+            Home
+          </Styles.NavText>
+          <Styles.NavText
+            active={currentTab === ProjectTabs.DASHBOARD}
+            onClick={() => handleTabs(ProjectTabs.DASHBOARD)}
+          >
+            DAShboard
+          </Styles.NavText>
+          <Styles.NavText
+            active={currentTab === ProjectTabs.VENDORS}
+            onClick={() => handleTabs(ProjectTabs.VENDORS)}
+          >
+            Vendors
+          </Styles.NavText>
+          <Styles.NavText
+            active={currentTab === ProjectTabs.PROJECTS}
+            onClick={() => handleTabs(ProjectTabs.PROJECTS)}
+          >
+            Projects
+          </Styles.NavText>
         </Styles.ResponsiveNav>
       </Styles.ResponsiveSidebarContainer>
     );
@@ -27,10 +52,30 @@ const Header = () => {
       </Styles.LogoTextWrap>
 
       <Styles.NavigationWrap>
-        <Styles.NavText active={false}>Home</Styles.NavText>
-        <Styles.NavText active={false}>DAShboard</Styles.NavText>
-        <Styles.NavText active={false}>Vendors</Styles.NavText>
-        <Styles.NavText active={true}>Projects</Styles.NavText>
+        <Styles.NavText
+          active={currentTab === ProjectTabs.Home}
+          onClick={() => handleTabs(ProjectTabs.Home)}
+        >
+          Home
+        </Styles.NavText>
+        <Styles.NavText
+          active={currentTab === ProjectTabs.DASHBOARD}
+          onClick={() => handleTabs(ProjectTabs.DASHBOARD)}
+        >
+          DAShboard
+        </Styles.NavText>
+        <Styles.NavText
+          active={currentTab === ProjectTabs.VENDORS}
+          onClick={() => handleTabs(ProjectTabs.VENDORS)}
+        >
+          Vendors
+        </Styles.NavText>
+        <Styles.NavText
+          active={currentTab === ProjectTabs.PROJECTS}
+          onClick={() => handleTabs(ProjectTabs.PROJECTS)}
+        >
+          Projects
+        </Styles.NavText>
       </Styles.NavigationWrap>
 
       <Styles.UserInfoIconWrap>

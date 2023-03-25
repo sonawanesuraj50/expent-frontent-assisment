@@ -1,3 +1,5 @@
+import { ProjectTabs } from "./constant";
+
 export interface isActive {
   active: boolean;
 }
@@ -15,4 +17,9 @@ export interface FormInitialValues {
   piiType: string;
   sharingPii: string;
   accessAws: string;
+}
+
+export interface HeaderProps {
+  setCurrentTab: (tab: ProjectTabs) => void;
+  currentTab: ProjectTabs;
 }
